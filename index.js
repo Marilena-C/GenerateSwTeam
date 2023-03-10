@@ -1,21 +1,22 @@
-import chalk from 'chalk';
-
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const chalk = require("chalk");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
+const teamMembers = [];
 
 /* TODO: Write Code to gather information about the development team members, and render the HTML file.*/
 //Use prompt to ask a questions using the inquirer to determine team makeup. The user  will answer a set of questions in command-line and provide the information needed to create objects  of type Manager, Engineer, & Intern.
 
+function startApp () {
 /*function to create the manager object*/
 const addManager = () => {
   inquirer
@@ -42,31 +43,32 @@ const addManager = () => {
         validate: validateEmail,
       },
       {
-        type: "input",
         name: "officeNumber",
+        type: "input",
         message:
           "Pease enter the team manager’s office number:" +
           chalk.green("(numbers only)"),
         validate: validateNumber,
       },
     ])
-    .then((response) => {
-      console.log(response);
 
+      .then(response => {
       const manager = new Manager(
-        capitalizeWords(response.name),
-        response.id,
-        response.email,
-        response.officeNumber
-      );
-      team.push(manager);
-      console.log(team);
+      capitalizeWords(response.name),
+      response.id,
+      response.email,
+      response.officeNumber
+    );
+    
+    teamMembers.push(manager);
+    MenuInput();
+    console.log(team);
+    console.log(response);
+  })   
 
-      MenuInput();
-    });
 };
 
-//Cal render() and pass in the team array
+//Call render() and pass in the team array
 //Output-directory and outputPath have already been setup so we can use fs.writeFile() to create the html file when needed. 
 
 
@@ -74,14 +76,12 @@ const addManager = () => {
  
  fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
 
-          ex of structure below:    
-*/
-
-function start () {
+function startApp () {
 
     // function to handle generating manager - first bc we need a manager
     function createManager() {
-        inquirer.prompt([
+        inquirer
+        .prompt([
             {
               type: "input",
               name: "managerName",
@@ -93,15 +93,12 @@ function start () {
                 return "Please enter at least one character.";
               }
             },
-            /* {ask for id},
-              {ask for email},
-              {ask for office number}
-             */
+            
           ]).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
             // push to team array
             // call the next function that will ask what type of employee will be created next
-            createTeam();
+            createManager();
           })
     }
 
@@ -110,7 +107,7 @@ function start () {
         // similar setup to what we have listed above
         inquirer.prompt([
             // question asking what we should make next
-                // choices(engineer, intern, I dont want to add anything else)
+                // choices(engineer, intern, I dont want to add anyone else)
         ]).then(userChoice => {
            // conditional to decide which of the below functions to call, based on userChoice
 
@@ -131,4 +128,4 @@ function start () {
     createManager();  
 }
 
-start();
+startApp();
