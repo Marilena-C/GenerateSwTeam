@@ -32,7 +32,7 @@ Every part of the code is then tested and it should pass each provided test.
 
 ## Installation
 
-- Install the necessary dependencies by running the 'npm i' command in terminal
+- Install the necessary dependencies by running the **npm i** command in Terminal
 - Install the older version of inquirer so that it doesnt break the setup using require(). npm install --save inquirer
     Link to doc: https://www.npmjs.com/package/inquirer
 
@@ -40,9 +40,10 @@ Every part of the code is then tested and it should pass each provided test.
 ## Usage
 
 - This application is using npm inquirer package to collect user's input and Jest to run the unit tests. 
-When the user considers that they've got all of the team members added, they exit the application, and the HTML file is generated.
+- When the user considers that they've got all of the team members added, they exit the application, and the HTML file is generated.
 
-- To initialize the app, run 'node index' in terminal
+- To initialize the app, run **node index** in Terminal
+
 ## Links
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
