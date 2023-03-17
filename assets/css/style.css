@@ -1,6 +1,6 @@
 #navbar {
-    background-color: rgba(48,165,198,255);
-    color: #0e9785;
+    background-color: rgba(146, 223, 214, 0.5);
+    color: #08685b;
     font-size: 54px;
 }
 
@@ -32,7 +32,7 @@ main {
 
 .card h3 {
     text-align: center;
-    font-weight: 280;
+    font-weight: 310;
     margin: 0;
 }
 
@@ -54,11 +54,11 @@ main {
 }
 
 .manager .card-header {
-    background: rgba(72, 78, 244, 0.5);;
+    background: rgba(129, 239, 226, 0.5);;
 }
 
-.engineer .card-header {
-    background:  rgba(14, 200, 131, .5);
+.engineer.card-header {
+    background:  rgba(106, 132, 233, 0.5);
 }
 
 .intern .card-header {
@@ -74,5 +74,5 @@ main {
 }
 
 .intern {
-    border: solid 3px rgba(239,102,150,255);
+    border: solid 3px rgba(225, 216, 236, 0.5);;
 }

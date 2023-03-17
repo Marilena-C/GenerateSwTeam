@@ -49,6 +49,7 @@ To initialize the app, run **node index** in Terminal
 
 ### Test
 Use **npm run test** command to run the tests
+
 ![Alt text](assets/images/Console_runTest.jpg)
 
 ## Output-file
