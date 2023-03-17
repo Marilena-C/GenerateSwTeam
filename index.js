@@ -12,7 +12,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 const team = [];
-const userChoice = "";
+let userChoice = "";
 
 /* TODO: Write Code to gather information about the development team members, and render the HTML file.*/
 //Use prompt to ask a questions using the inquirer to determine team makeup. The user  will answer a set of questions in command-line and provide the information needed to create objects  of type Manager, Engineer, & Intern.
@@ -57,25 +57,28 @@ const createManager = () => {
         name: "managerName",
         message:
           "Enter team manager’s name: " + chalk.green("(1-30 characters)"),
+        validate: validName,
       },
       {
         type: "input",
         name: "id",
         message:
           "Enter the team manager’s employee ID: " + chalk.italic("(numbers only)"),
+        validate: validNumber,
 
       },
       {
         type: "input",
         name: "email",
         message: "Please enter the team manager’s email address: ",
-
+        validate: validEmail,
       },
       {
         type: "input",
         name: "officeNumber",
         message:
           "Pease enter the team manager’s office number:" + chalk.green("numbers only)"),
+        validate: validNumber,   
       },
     ])
 
@@ -128,7 +131,7 @@ const createEngineer = () => {
     ])
     .then((response) => {
       const engineer = new Engineer(
-        capseWords(response.name),
+        capsWords(response.engineerName),
         response.id,
         response.email,
         response.github
@@ -136,17 +139,17 @@ const createEngineer = () => {
       //   console.log(engineer);
       team.push(engineer);
       //   console.log(team);
-      MenuInput();
+      menuInput();
     });
 };
-
+// push to team array
 // function to handle generating Intern object 
 const createIntern = () => {
   inquirer
     .prompt([
       {
         type: "input",
-        name: "name",
+        name: "InternName",
         message:
           "Enter the intern’s name: " + chalk.italic("(1-30 characters)"),
         validate: validName,
@@ -172,7 +175,7 @@ const createIntern = () => {
     ])
     .then((response) => {
       const intern = new Intern(
-        capitalizeWords(response.name),
+        capsWords(response.InternName),
         response.id,
         response.email,
         response.school
@@ -180,78 +183,62 @@ const createIntern = () => {
       //   console.log(intern);
       team.push(intern);
       //   console.log(team);
-      MenuInput();
+      menuInput();
     });
 };
 
-//function to act based on the menu
-function menuAction() {
-  switch (menuOpt) {
-    case "Add an engineer":
+
+// call the next function that will ask user what type of employee they want to create next
+
+
+//function to add user's options from the menu
+// choices(engineer, intern, I dont want to add anyone else)
+// conditional to decide which of the below functions to call, based on userChoice
+function menuSelection() {
+  switch (userChoice) {
+    case "Add engineer":
       createEngineer();
       break;
 
-    case "Add an intern":
+    case "Add intern":
       createIntern();
       break;
 
-    case "Finish building the team":
+    // If none of the choices (engineer or employee) have been chosen, default to buildTeam()
+    case "No more team members required":
       console.log(chalk.black.bgGreenBright("Team complete"));
       generateHTMLFile();
   }
 }
-// push to team array
-// call the next function that will ask user what type of employee they want to create next
 
-
-  //function to add user's options from the menu
-  // choices(engineer, intern, I dont want to add anyone else)
- // conditional to decide which of the below functions to call, based on userChoice
-  function menuSelection() {
-    switch (userChoice) {
-      case "Add engineer":
-        createEngineer();
-        break;
-
-      case "Add intern":
-        createIntern();
-        break;
-      
-   // If none of the choices (engineer or employee) have been chosen, default to buildTeam()
-      case "No more team members required":
-        console.log(chalk.black.bgGreenBright("Team complete"));
-        generateHTMLFile();
-    }
-  }
-
-  //get user's input from menu options
-  const menuInput = () => {
-    inquirer
-      .prompt([
-        {
-          type: "list",
-          name: "employeeType",
-          message: chalk.green(
-            "\n==============\n     MENU     \n==============\nSelect team member type:"
-          ),
-          choices: [
-            {
-              name: "Add engineer",
-            },
-            {
-              name: "Add intern",
-            },
-            {
-              name: "Completed the team",
-            },
-          ],
-        },
-      ])
-      .then((response) => {
-        userChoice = response.employeeType;
-        console.log(userChoice);
-        menuSelection();
-  });
+//get user's input from menu options
+const menuInput = () => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "employeeType",
+        message: chalk.green(
+          "\n==============\n     MENU     \n==============\nSelect team member type:"
+        ),
+        choices: [
+          {
+            name: "Add engineer",
+          },
+          {
+            name: "Add intern",
+          },
+          {
+            name: "Completed the team",
+          },
+        ],
+      },
+    ])
+    .then((response) => {
+      userChoice = response.employeeType;
+      console.log(userChoice);
+      menuSelection();
+    });
 };
 
 //Call render() and pass in the team array
@@ -283,7 +270,7 @@ function capsWords(str) {
 }
 
 // starts the whole chain of events.
-createManager(); 
+createManager();
 
 
 //startApp();
