@@ -31,13 +31,18 @@ Every part of the code is then tested and it should pass each provided test.
 - Run tests to make sure that the lib classes have been created correctly. Use "npm run test" command
 
 ## Installation
+
+- Install the necessary dependencies by running the 'npm i' command in terminal
 - Install the older version of inquirer so that it doesnt break the setup using require(). npm install --save inquirer
     Link to doc: https://www.npmjs.com/package/inquirer
 
 
 ## Usage
 
-When the user considers that he's got all of the team members added, they exit the application, and the HTML file is generated.
+- This application is using npm inquirer package to collect user's input and Jest to run the unit tests. 
+When the user considers that they've got all of the team members added, they exit the application, and the HTML file is generated.
+
+- To initialize the app, run 'node index' in terminal
 ## Links
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
