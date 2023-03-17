@@ -56,6 +56,12 @@ Use **npm run test** command to run the tests
 Demo of the generated HTML file:
 
 ![Alt text](assets/images/Output-LiveServer.jpg)
+
+Add css styling
+
+![
+    
+](assets/images/Styled_Output.jpg)
 ## Links
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
