@@ -59,7 +59,7 @@ const addManager = () => {
       response.email,
       response.officeNumber
     );
-    
+
     teamMembers.push(manager);
     MenuInput();
     console.log(team);
@@ -70,11 +70,6 @@ const addManager = () => {
 
 //Call render() and pass in the team array
 //Output-directory and outputPath have already been setup so we can use fs.writeFile() to create the html file when needed. 
-
-
- 
- 
- fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
 
 function startApp () {
 
@@ -128,4 +123,5 @@ function startApp () {
     createManager();  
 }
 
+}
 startApp();

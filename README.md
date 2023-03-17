@@ -16,8 +16,8 @@ Every part of the code is then tested and it should pass each provided test.
 
 ## Actions
 - Create a node project by creating a new folder for the project and initialize it as an npm project with npm init -y;
-- Install the older version of inquirer so that it doesnt break the setup using require(). npm install --save inquirer
-    Link to doc: https://www.npmjs.com/package/inquirer
+
+- Install the older version of inquirer so that it doesnt break the setup using require(). 
 
 - Modify package.json so that it uses jest to test.
         change scripts section to {
@@ -30,8 +30,16 @@ Every part of the code is then tested and it should pass each provided test.
 
 - Run tests to make sure that the lib classes have been created correctly. Use "npm run test" command
 
+## Installation
+- Install the older version of inquirer so that it doesnt break the setup using require(). npm install --save inquirer
+    Link to doc: https://www.npmjs.com/package/inquirer
 
+
+## Usage
+
+When the user considers that he's got all of the team members added, they exit the application, and the HTML file is generated.
 ## Links
+
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
 
-Deployed page: https://marilena-c.github.io/GenerateSwTeamPage/
+A sample HTML file generated using the application: 
