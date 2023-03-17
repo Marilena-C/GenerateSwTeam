@@ -59,9 +59,8 @@ Demo of the generated HTML file:
 
 Add css styling
 
-![
-    
-](assets/images/Styled_Output.jpg)
+
+![Alt text](assets/images/Styled_Output.jpg)
 ## Links
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
