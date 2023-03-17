@@ -28,7 +28,7 @@ Every part of the code is then tested and it should pass each provided test.
 
 - Create lib classes for the team members
 
-- Run tests to make sure that the lib classes have been created correctly. Use "npm run test" command
+- Run tests to make sure that the lib classes have been created correctly. 
 
 ## Installation
 
@@ -42,8 +42,19 @@ Every part of the code is then tested and it should pass each provided test.
 - This application is using npm inquirer package to collect user's input and Jest to run the unit tests. 
 - When the user considers that they've got all of the team members added, they exit the application, and the HTML file is generated.
 
-- To initialize the app, run **node index** in Terminal
+### Run the app
+To initialize the app, run **node index** in Terminal
 
+![Alt text](assets/images/Console_runApp_.jpg)
+
+### Test
+Use **npm run test** command to run the tests
+![Alt text](assets/images/Console_runTest.jpg)
+
+## Output-file
+Demo of the generated HTML file:
+
+![Alt text](assets/images/Output-LiveServer.jpg)
 ## Links
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage

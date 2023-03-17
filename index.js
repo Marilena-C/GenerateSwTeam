@@ -229,7 +229,7 @@ const menuInput = () => {
             name: "Add intern",
           },
           {
-            name: "Completed the team",
+            name: "No more team members required",
           },
         ],
       },
@@ -271,6 +271,3 @@ function capsWords(str) {
 
 // starts the whole chain of events.
 createManager();
-
-
-//startApp();

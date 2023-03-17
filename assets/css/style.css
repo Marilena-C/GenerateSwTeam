@@ -1,0 +1,78 @@
+#navbar {
+    background-color: rgba(48,165,198,255);
+    color: #0e9785;
+    font-size: 54px;
+}
+
+main {
+    width: fit-content;
+    max-width: 75%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+.card {
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 220px;
+    height: auto;
+    vertical-align: top;
+    overflow-wrap: break-word;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 520;
+    margin-bottom: 0;
+}
+
+.card h3 {
+    text-align: center;
+    font-weight: 280;
+    margin: 0;
+}
+
+.card li {
+    margin-top: 0;
+}
+
+.card-header {
+    color: rgb(142, 24, 165);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    padding: 10px;
+}
+
+.card-body {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding: 10px;
+}
+
+.manager .card-header {
+    background: rgba(72, 78, 244, 0.5);;
+}
+
+.engineer .card-header {
+    background:  rgba(14, 200, 131, .5);
+}
+
+.intern .card-header {
+    background: rgba(224, 228, 108, 0.5);
+}
+
+.manager {
+    border: solid 3px rgba(100,198,199,255);
+}
+
+.engineer {
+    border: solid 3px rgba(249,150,32,255);
+}
+
+.intern {
+    border: solid 3px rgba(239,102,150,255);
+}
