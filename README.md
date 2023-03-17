@@ -65,4 +65,4 @@ Add css styling
 
 GitHub repository: https://github.com/Marilena-C/GenerateSwTeamPage
 
-A sample HTML file generated using the application: 
+A sample HTML file generated using the application: https://github.com/Marilena-C/GenerateSwTeamPage/blob/main/output/team.html
