@@ -157,7 +157,7 @@ const createIntern = () => {
       {
         type: "input",
         name: "id",
-        message: "Enter the ntern’s ID: " + chalk.italic("(numbers only)"),
+        message: "Enter the intern’s ID: " + chalk.italic("(numbers only)"),
         validate: validNumber,
       },
       {
@@ -205,7 +205,7 @@ function menuSelection() {
       break;
 
     // If none of the choices (engineer or employee) have been chosen, default to buildTeam()
-    case "No more team members required":
+    case "Finish building the team":
       console.log(chalk.black.bgGreenBright("Team complete"));
       generateHTMLFile();
   }
@@ -229,7 +229,7 @@ const menuInput = () => {
             name: "Add intern",
           },
           {
-            name: "No more team members required",
+            name: "Finish building the team",
           },
         ],
       },
