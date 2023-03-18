@@ -45,8 +45,7 @@ Every part of the code is then tested and it should pass each provided test.
 ### Run the app
 To initialize the app, run **node index** in Terminal
 
-![Alt text](assets/images/Console_runApp_.jpg)
-
+![Alt text](assets/images/Console_runApp_01.jpg) ![Alt text](assets/images/Console_runApp_02.jpg)
 ### Test
 Use **npm run test** command to run the tests
 
