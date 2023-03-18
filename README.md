@@ -54,6 +54,7 @@ Use **npm run test** command to run the tests
 
 ## Output-file
 Demo of the generated HTML file:
+
 ![Alt text](assets/images/Generated_team_HTML.jpg)
 
 ## Links
