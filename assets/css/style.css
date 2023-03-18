@@ -1,7 +1,8 @@
 #navbar {
     background-color: rgba(146, 223, 214, 0.5);
-    color: #08685b;
+    color: #09626e;
     font-size: 54px;
+    text-align: center;
 }
 
 main {
@@ -9,6 +10,7 @@ main {
     max-width: 75%;
     margin: 0 auto;
     margin-bottom: 50px;
+
 }
 
 
